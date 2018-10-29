@@ -9,12 +9,15 @@ function getAndPrintHTMLChunks () {
   };
 
   /* Add your code here */
-
   https.get(requestOptions, function (response) {
     // console.log(requestOptions);
-    response.setEncoding('utf8');
+    var newArray = [];
     response.on('data', function (data) {
-      console.log('Chunk Received:', data.length);
+      // console.log('Chunk Received. Length:', data.length);
+      for (chunkIndex = 0; chunkIndex < data.length; chunkIndex++) {
+        newArray.push(data.chunkIndex);
+      }
+      console.log(newArray)
   });
 
   response.on('end', function() {
