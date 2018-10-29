@@ -14,7 +14,7 @@ function getAndPrintHTMLChunks () {
     // console.log(requestOptions);
     response.setEncoding('utf8');
     response.on('data', function (data) {
-      console.log('Chunk Received:', data.length);
+      console.log('Chunk Received:', data);
   });
 
   response.on('end', function() {
